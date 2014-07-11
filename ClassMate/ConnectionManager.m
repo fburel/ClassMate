@@ -21,4 +21,48 @@
     return __SharedInstance;
 }
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [Parse setApplicationId:@"udvpsmwE9uvn07NGKTF3kq8J31mRUeLOyhFIVwht"
+                      clientKey:@"WtoG6NxjLmDKxRiTJ6lOlePbLuRXWy56ON36MMep"];
+    }
+    return self;
+}
+
+
+#pragma mark - User
+
+- (void)performLoginWithUserName:(NSString *)username andPassword:(NSString *)password completion:(LoginResponseBlock)completion
+{
+    
+    [PFUser logInWithUsernameInBackground:username
+                                 password:password
+                                    block:^(PFUser *user, NSError *error)
+    {
+        if(error)
+        {
+            completion(NO, nil);
+        }
+        else
+        {
+            completion(YES, user.objectId);
+        }
+    }];
+    
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+

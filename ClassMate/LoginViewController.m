@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "ConnectionManager.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
@@ -25,7 +27,35 @@
 
 - (IBAction)connect:(id)sender
 {
+    NSString * login = self.loginTextField.text;
+    NSString * password = self.passwordTextField.text;
     
+    ConnectionManager * manager = [ConnectionManager sharedInstance];
+    
+    [manager performLoginWithUserName:login
+                          andPassword:password
+                           completion:^(BOOL success, NSString *userID)
+    {
+        if(!success)
+        {
+            self.passwordTextField.text = @"";
+            
+            UIAlertView * alert = [UIAlertView new];
+            alert.title = @"Mauvais login / mot de passe";
+            alert.message = @"Essaye encore";
+            [alert addButtonWithTitle:@"OK"];
+            [alert show];
+        }
+        else
+        {
+            User * user = [User sharedInstance];
+            user.userName = self.loginTextField.text;
+            user.identifer = userID;
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+    }];
 }
 
 

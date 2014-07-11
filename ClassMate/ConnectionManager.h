@@ -14,7 +14,9 @@
 
 + (instancetype) sharedInstance;
 
+typedef void(^LoginResponseBlock)(BOOL success, NSString * userID);
 
+- (void) performLoginWithUserName:(NSString *)username andPassword:(NSString *)password completion:(LoginResponseBlock)completion;
 
 
 @end
