@@ -59,7 +59,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khg-d9-gTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="127"/>
+            <point key="canvasLocation" x="468" y="132"/>
         </scene>
         <!--Sessions Table View Controller-->
         <scene sceneID="mHA-3P-2wv">
@@ -141,10 +141,17 @@
                                 <state key="normal" title="S'identifier">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="connect:" destination="45Q-or-Tai" eventType="touchUpInside" id="BPJ-Gi-Ueo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="ErG-c8-dDp" id="lMc-55-yHc"/>
+                        <outlet property="passwordTextField" destination="vNl-od-KPj" id="4MQ-3o-rud"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltc-oF-vuG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

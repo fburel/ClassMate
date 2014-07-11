@@ -36,6 +36,11 @@
     }
 }
 
+- (void) fetchFormation
+{
+    /*...*/
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -28,6 +28,7 @@
 		0C3D071E196FE82E009639B4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D071D196FE82E009639B4 /* User.m */; };
 		0C3D0722196FE84A009639B4 /* Formation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0721196FE84A009639B4 /* Formation.m */; };
 		0C3D0725196FE85C009639B4 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0724196FE85C009639B4 /* Session.m */; };
+		0C3D0729196FFBEF009639B4 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0728196FFBEF009639B4 /* ConnectionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		0C3D0721196FE84A009639B4 /* Formation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formation.m; sourceTree = "<group>"; };
 		0C3D0723196FE85C009639B4 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		0C3D0724196FE85C009639B4 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		0C3D0727196FFBEF009639B4 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		0C3D0728196FFBEF009639B4 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,16 @@
 		0C3D071F196FE837009639B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0C3D0726196FFBDB009639B4 /* ModelObject */,
+				0C3D0727196FFBEF009639B4 /* ConnectionManager.h */,
+				0C3D0728196FFBEF009639B4 /* ConnectionManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0C3D0726196FFBDB009639B4 /* ModelObject */ = {
+			isa = PBXGroup;
+			children = (
 				0C3D071C196FE82E009639B4 /* User.h */,
 				0C3D071D196FE82E009639B4 /* User.m */,
 				0C3D0720196FE84A009639B4 /* Formation.h */,
@@ -199,7 +212,7 @@
 				0C3D0723196FE85C009639B4 /* Session.h */,
 				0C3D0724196FE85C009639B4 /* Session.m */,
 			);
-			name = Model;
+			name = ModelObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +319,7 @@
 				0C3D0717196FE4A5009639B4 /* StoreTableViewController.m in Sources */,
 				0C3D0722196FE84A009639B4 /* Formation.m in Sources */,
 				0C3D0711196FE45F009639B4 /* LoginViewController.m in Sources */,
+				0C3D0729196FFBEF009639B4 /* ConnectionManager.m in Sources */,
 				0C3D0714196FE48F009639B4 /* FormationsTableViewController.m in Sources */,
 				0C3D0725196FE85C009639B4 /* Session.m in Sources */,
 			);
