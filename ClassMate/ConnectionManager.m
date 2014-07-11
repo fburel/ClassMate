@@ -58,7 +58,40 @@
 
 - (void)fetchFormationsForUser:(User *)user completion:(FetchResponseBlock)completion
 {
+    PFQuery * currentUser = [PFQuery queryWithClassName:@"_User"];
+    [currentUser whereKey:@"objectId" equalTo:user.identifer];
     
+    PFQuery * inscriptions = [PFQuery queryWithClassName:@"Inscription"];
+    [inscriptions whereKey:@"user" matchesQuery:currentUser];
+    [inscriptions includeKey:@"formation"];
+    
+    
+    
+    [inscriptions findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        if(error)
+        {
+            completion(error, nil);
+        }
+        else
+        {
+            NSMutableArray * list = [NSMutableArray new];
+            
+            for(PFObject * inscription in objects)
+            {
+                PFObject * formation =  inscription[@"formation"];
+                
+                Formation * f = [Formation new];
+                f.title = formation[@"Title"];
+                f.identifier = formation.objectId;
+                f.entitledToUser = YES;
+                
+                [list addObject:f];
+            }
+            
+            completion(nil, [list copy]);
+        }
+    }];
 }
 
 @end

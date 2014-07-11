@@ -13,7 +13,7 @@
 
 @interface FormationsTableViewController ()
 
-@property (strong, nonatomic) NSArray * formations
+@property (strong, nonatomic) NSArray * formations;
 
 @end
 
