@@ -9,10 +9,11 @@
 #import "FormationsTableViewController.h"
 #import "Formation.h"
 #import "User.h"
+#import "ConnectionManager.h"
 
 @interface FormationsTableViewController ()
 
-
+@property (strong, nonatomic) NSArray * formations
 
 @end
 
@@ -28,51 +29,77 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
     // Recuperation de l'utilisateur
     User * user = [User sharedInstance];
     if(user.identifer == nil)
     {
         [self performSegueWithIdentifier:@"LOGIN_SEGUE" sender:self];
     }
+    else
+    {
+        [self fetchFormation];
+    }
+
 }
 
 - (void) fetchFormation
 {
-    /*...*/
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UIAlertView * toast = [UIAlertView new];
+    toast.title = @"Patientez svp";
+    toast.message = @"Recuperation des formation en cours";
+    [toast show];
+    
+    ConnectionManager * manager = [ConnectionManager sharedInstance];
+    [manager fetchFormationsForUser:[User sharedInstance]
+                         completion:^(NSError *error, NSArray *results)
+    {
+        [toast dismissWithClickedButtonIndex:0 animated:YES];
+        
+        if(error)
+        {
+            // Fail gracefully
+        }
+        else
+        {
+            self.formations = results;
+            [self.tableView reloadData];
+            
+        }
+    }];
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.formations.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
     
     // Configure the cell...
+    Formation * f = self.formations[indexPath.row];
+    cell.textLabel.text = f.title;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

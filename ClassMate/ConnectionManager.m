@@ -54,6 +54,12 @@
     
 }
 
+#pragma mark - Requests
+
+- (void)fetchFormationsForUser:(User *)user completion:(FetchResponseBlock)completion
+{
+    
+}
 
 @end
 
