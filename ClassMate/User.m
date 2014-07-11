@@ -10,4 +10,20 @@
 
 @implementation User
 
+
++ (instancetype)sharedInstance
+{
+    static id __SharedInstance;
+    
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __SharedInstance = [[User alloc]init];
+    });
+    
+    
+    
+    return __SharedInstance;
+}
+
 @end

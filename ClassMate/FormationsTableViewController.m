@@ -7,21 +7,16 @@
 //
 
 #import "FormationsTableViewController.h"
+#import "Formation.h"
+#import "User.h"
 
 @interface FormationsTableViewController ()
+
+
 
 @end
 
 @implementation FormationsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -32,6 +27,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Recuperation de l'utilisateur
+    User * user = [User sharedInstance];
+    if(user.identifer == nil)
+    {
+        [self performSegueWithIdentifier:@"LOGIN_SEGUE" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
