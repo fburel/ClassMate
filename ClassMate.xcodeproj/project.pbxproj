@@ -25,6 +25,9 @@
 		0C3D0714196FE48F009639B4 /* FormationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0713196FE48F009639B4 /* FormationsTableViewController.m */; };
 		0C3D0717196FE4A5009639B4 /* StoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0716196FE4A5009639B4 /* StoreTableViewController.m */; };
 		0C3D071A196FE4C6009639B4 /* SessionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0719196FE4C6009639B4 /* SessionsTableViewController.m */; };
+		0C3D071E196FE82E009639B4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D071D196FE82E009639B4 /* User.m */; };
+		0C3D0722196FE84A009639B4 /* Formation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0721196FE84A009639B4 /* Formation.m */; };
+		0C3D0725196FE85C009639B4 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3D0724196FE85C009639B4 /* Session.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,12 @@
 		0C3D0716196FE4A5009639B4 /* StoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableViewController.m; sourceTree = "<group>"; };
 		0C3D0718196FE4C6009639B4 /* SessionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsTableViewController.h; sourceTree = "<group>"; };
 		0C3D0719196FE4C6009639B4 /* SessionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsTableViewController.m; sourceTree = "<group>"; };
+		0C3D071C196FE82E009639B4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0C3D071D196FE82E009639B4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0C3D0720196FE84A009639B4 /* Formation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formation.h; sourceTree = "<group>"; };
+		0C3D0721196FE84A009639B4 /* Formation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formation.m; sourceTree = "<group>"; };
+		0C3D0723196FE85C009639B4 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		0C3D0724196FE85C009639B4 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +137,7 @@
 				0C3D06E7196FE1E9009639B4 /* AppDelegate.h */,
 				0C3D06E8196FE1E9009639B4 /* AppDelegate.m */,
 				0C3D06EA196FE1E9009639B4 /* Main.storyboard */,
+				0C3D071F196FE837009639B4 /* Model */,
 				0C3D071B196FE4CE009639B4 /* Controller */,
 				0C3D06F0196FE1E9009639B4 /* Images.xcassets */,
 				0C3D06DF196FE1E9009639B4 /* Supporting Files */,
@@ -177,6 +187,19 @@
 				0C3D0710196FE45F009639B4 /* LoginViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		0C3D071F196FE837009639B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C3D071C196FE82E009639B4 /* User.h */,
+				0C3D071D196FE82E009639B4 /* User.m */,
+				0C3D0720196FE84A009639B4 /* Formation.h */,
+				0C3D0721196FE84A009639B4 /* Formation.m */,
+				0C3D0723196FE85C009639B4 /* Session.h */,
+				0C3D0724196FE85C009639B4 /* Session.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,11 +300,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3D06E9196FE1E9009639B4 /* AppDelegate.m in Sources */,
+				0C3D071E196FE82E009639B4 /* User.m in Sources */,
 				0C3D06E5196FE1E9009639B4 /* main.m in Sources */,
 				0C3D071A196FE4C6009639B4 /* SessionsTableViewController.m in Sources */,
 				0C3D0717196FE4A5009639B4 /* StoreTableViewController.m in Sources */,
+				0C3D0722196FE84A009639B4 /* Formation.m in Sources */,
 				0C3D0711196FE45F009639B4 /* LoginViewController.m in Sources */,
 				0C3D0714196FE48F009639B4 /* FormationsTableViewController.m in Sources */,
+				0C3D0725196FE85C009639B4 /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
